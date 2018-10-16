@@ -219,6 +219,18 @@ const createUser = async (req, res) => {
 }
 
 
+const newRoom = async (req, res) => {
+  try {
+    let { name } = req.body;
+    let room = await chatkit.createRoom({ name });
+    res.send(room);
+  } catch ({ status, headers, ...err_messages }) {
+    res.status(status).send(err_messages);
+  }
+}
+
+
+
 const loginUser = async (req, res) => {
 
   let { userId, password } = req.body;
@@ -235,6 +247,7 @@ module.exports = {
   canJoinRoom,
   loginUser,
   createUser,
+  newRoom,
   getAllUsers,
   getAllJoinableRoomsOfSpecificGame,
   getAllJoinedRooms,

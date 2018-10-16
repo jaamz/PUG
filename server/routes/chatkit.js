@@ -6,6 +6,7 @@ const {
   canJoinRoom,
   loginUser,
   createUser,
+  newRoom,
   getAllUsers,
   getAllJoinableRoomsOfSpecificGame,
   getAllJoinedRooms,
@@ -19,7 +20,7 @@ router.get('/gamerooms', getAllJoinableRoomsOfSpecificGame)
 router.get('/alljoinedrooms', getAllJoinedRooms)
 router.get('/userrooms', getAllJoinedRoomsOfSpecificGame)
 router.get('/allusers', getAllUsers)
-
+router.post('/createroom', newRoom)
 router.post('/createuser', createUser)
 router.post('/login', loginUser)
 
