@@ -11,16 +11,12 @@ import {
   SUBSCRIBE,
   CHANGE_CHATROOM,
   SEND_MESSAGE,
-<<<<<<< HEAD
-  NO_JOINED_ROOMS
-=======
   JOIN_ROOM,
   NOT_ALLOWED,
   LEAVE_ROOM,
   UNSUBSCRIBE,
   NO_JOINED_ROOMS,
   ERROR_SUBSCRIBING
->>>>>>> d19bfe6310ee2ebaed07f4e8c85b190187f595ab
 } from '../Constants'
 
 import {CHATKIT_TOKEN_PROVIDER_ENDPOINT, CHATKIT_INSTANCE_LOCATOR, SERVER_URL} from '../../../config/info';
@@ -77,9 +73,6 @@ export const subscribeToAllJoined = userId => async dispatch => {
   } catch (err) {
     console.log("USER ID: ", userId)
     console.error(err);
-<<<<<<< HEAD
-    dispatch({ type: "ERROR SUBSCRIBING" })
-=======
     dispatch({type: ERROR_SUBSCRIBING})
   }
 }
@@ -91,7 +84,6 @@ export const checkRoomAvailability = (userId, roomId) => async dispatch => {
   } else {
     // TODO: - Need to do something when cannot join room.
     dispatch({type: NOT_ALLOWED})
->>>>>>> d19bfe6310ee2ebaed07f4e8c85b190187f595ab
   }
 }
 
